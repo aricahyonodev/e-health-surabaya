@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "../components/card";
 
 const services = [
@@ -28,14 +29,16 @@ export default function page() {
       <section id="services" className="flex-row space-y-2">
         <p className="font-bold text-lg">Layanan</p>
         {services.map((service, i) => (
-          <Card key={'service' + i} {...service} />
+          <Link className="block" key={"service" + i}  href={"/health-center/select-area"}>
+            <Card {...service} />
+          </Link>
         ))}
       </section>
 
       <section id="anotherServices" className="flex-row space-y-2">
         <p className="font-bold text-lg mt-6">Pembatalan Atau Cetak Ulang</p>
         {anotherServices.map((anotherService, i) => (
-          <Card key={"another-service-"+ i} {...anotherService} />
+          <Card key={"another-service-" + i} {...anotherService} />
         ))}
       </section>
     </>

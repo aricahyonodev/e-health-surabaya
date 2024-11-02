@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
 
         <main className="mx-4 mt-8 min-h-screen">{children}</main>
 
-        <footer className="text-center text-sm mb-5">
+        <footer className="text-center text-sm mb-5 mt-12">
           2024 @ Dinas Kesehatan Koita Surabaya
         </footer>
       </body>
