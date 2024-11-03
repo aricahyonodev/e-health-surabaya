@@ -45,7 +45,7 @@ export default function Page() {
       <section id="select-health-center-area" className="flex-row space-y-2">
         <p className="font-bold text-lg">Pilih Wilayah Puskesmas</p>
         {area.map((data) => (
-          <Link
+          <Link className="inline-block"
             key={"area" + data.id}
             href={"/health-center/select-area/" + data.id}
           >

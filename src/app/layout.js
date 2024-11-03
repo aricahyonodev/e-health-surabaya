@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import BackButton from "./components/backButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -50,6 +51,11 @@ export default function RootLayout({ children }) {
         <footer className="text-center text-sm mb-5 mt-12">
           2024 @ Dinas Kesehatan Koita Surabaya
         </footer>
+
+        <div>
+          <BackButton/>
+        </div>
+        
       </body>
     </html>
   );
