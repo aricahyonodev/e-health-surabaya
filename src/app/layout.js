@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,20 +25,24 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      
-        <header className="px-2 py-2 bg-primary text-white flex items-center">
-          <Image
-            src="/assets/icons/surabaya.png"
-            width={40}
-            height={40}
-            alt="logo pemkot surabaya"
-          />
-          <div className="ml-1">
-            <h1 className="inline-block font-semibold text-lg">
-              Pendaftaran Antrian Online
-            </h1>
-            <h1 className="-mt-2 font-medium">Layanan Kesehatan Surabaya</h1>
-          </div>
+        <header>
+          <Link
+            href={"/home"}
+            className="px-2 py-2 bg-primary text-white flex items-center"
+          >
+            <Image
+              src="/assets/icons/surabaya.png"
+              width={40}
+              height={40}
+              alt="logo pemkot surabaya"
+            />
+            <div className="ml-1">
+              <h1 className="inline-block font-semibold text-lg">
+                Pendaftaran Antrian Online
+              </h1>
+              <h1 className="-mt-2 font-medium">Layanan Kesehatan Surabaya</h1>
+            </div>
+          </Link>
         </header>
 
         <main className="mx-4 mt-8 min-h-screen">{children}</main>
