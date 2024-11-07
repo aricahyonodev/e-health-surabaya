@@ -99,8 +99,14 @@ const datas = [
 
 function Card({title}) {
   return (
-    <article className="text-center hover:bg-primary rounded-lg bg-white px-4 pt-4 pb-6 cursor-pointer border-2">
-      <Image className="inline-block" width={50} height={50} src={"/assets/icons/health-center.svg"} alt="ikon puskesmas" />
+    <article className="text-center hover:border-2 hover:shadow-lg hover:border-primary rounded-lg bg-white px-4 pt-4 pb-6 cursor-pointer border-2">
+      <Image
+        className="inline-block"
+        width={50}
+        height={50}
+        src={"/assets/icons/health-center.svg"}
+        alt="ikon puskesmas"
+      />
       <h1 className="font-medium mt-1 ">{title}</h1>
     </article>
   );

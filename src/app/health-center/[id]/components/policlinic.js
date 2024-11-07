@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function PopUp({ id, title, img, onRemove }) {
   return (
-    <article className="flex flex-col items-center border-2  z-20 bg-white py-6 px-12 rounded-t-xl fixed bottom-0 right-0 left-0">
+    <article className="flex flex-col items-center border-2 z-20 bg-white py-6 px-12 rounded-t-xl fixed bottom-0 right-0 left-0">
       <header>
         <h1 className="font-medium">Anda Memilih Poli</h1>
       </header>
@@ -40,14 +40,16 @@ function PopUp({ id, title, img, onRemove }) {
 function Card({ id, title, img, onClick, selectedPoliclinic }) {
   const handleClick = () => onClick({ id, title, img });
   const isSelected = selectedPoliclinic?.id == id;
-  const bgPrimary = isSelected ? "bg-primary" : "bg-white";
+  const bgPrimary = isSelected
+    ? "border-2 shadow-lg border-primary"
+    : "bg-white";
 
   return (
     <button onClick={handleClick}>
       <article
         className={
           bgPrimary +
-          " text-center hover:bg-primary rounded-lg  px-4 pt-4 pb-6 cursor-pointer border-2 "
+          " bg-white hover:border-2 hover:shadow-lg hover:border-primary  text-center  rounded-lg  px-4 pt-4 pb-6 cursor-pointer border-2 "
         }
       >
         <Image
