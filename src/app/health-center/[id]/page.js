@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Policlinic from "./components/policlinic";
 const policlinic = [
   { id: 1, img: "public.svg", title: "Umum" },
@@ -17,8 +16,9 @@ const data = {
 };
 
 
-export default async function Page() {
+export default async function Page({params}) {
   const { healthCenter, policlinic } = data;
+  const healthCenterId = (await params).id
   return (
     <section id="select-health-center-area">
       <p className="font-semibold text-lg">Pilih Poli - {healthCenter}</p>
@@ -26,7 +26,7 @@ export default async function Page() {
         placeholder="Cari Puskesmas"
         className="rounded-md bg-white border-2 focus:outline-none py-1 w-full mb-6 mt-2 px-2"
       />
-      <Policlinic data={policlinic}/>
+      <Policlinic healthCenterId={healthCenterId} data={policlinic} />
     </section>
   );
 }

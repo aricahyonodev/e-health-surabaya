@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-function PopUp({ id, title, img, onRemove }) {
+function PopUp({ id : policlinicId, title, img, onRemove, healthCenterId }) {
   return (
     <article className="flex flex-col items-center border-2 z-20 bg-white py-6 px-12 rounded-t-xl fixed bottom-0 right-0 left-0">
       <header>
@@ -23,9 +24,16 @@ function PopUp({ id, title, img, onRemove }) {
         <p className="font-medium  mb-4 capitalize">{title}</p>
       </main>
       <footer className="flex flex-col items-center justify-center w-full">
-        <button className="py-1 w-full bg-primary rounded-md mb-3 text-white font-medium">
-          Lanjut
-        </button>
+        <Link
+          className="w-full"
+          href={
+            "/health-center/" + healthCenterId + "/policlinic/" + policlinicId
+          }
+        >
+          <button className="py-1 w-full bg-primary rounded-md mb-3 text-white font-medium">
+            Lanjut
+          </button>
+        </Link>
         <button
           className="py-1 w-full rounded-md font-medium "
           onClick={onRemove}
@@ -66,7 +74,7 @@ function Card({ id, title, img, onClick, selectedPoliclinic }) {
 }
 
 // Main
-export default function Policlinic({ data }) {
+export default function Page({ data, healthCenterId }) {
   const [selectedPoliclinic, setselectedPoliclinic] = useState(null);
 
   function handleClick(params) {
@@ -94,7 +102,11 @@ export default function Policlinic({ data }) {
 
       {/* Pop Up show when after select Policlinic*/}
       {selectedPoliclinic && (
-        <PopUp {...selectedPoliclinic} onRemove={handleRemovePoliclinic} />
+        <PopUp
+          healthCenterId={healthCenterId}
+          {...selectedPoliclinic}
+          onRemove={handleRemovePoliclinic}
+        />
       )}
     </>
   );
