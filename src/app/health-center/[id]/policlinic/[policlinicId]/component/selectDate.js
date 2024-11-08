@@ -54,14 +54,14 @@ export function Card({ date, dayName, month, year, arrivalDate, onClick }) {
   let addStyle;
   addStyle = isSelected ? "border-2 shadow-lg border-primary" : "";
   addStyle += isSunday
-    ? " cursor-not-allowed bg-red-300 hover:border-0 hover:shadow-none "
-    : "";
+    ? " cursor-not-allowed bg-red-300 "
+    : " bg-white hover:border-2 hover:shadow-lg hover:border-primary";
   return (
     <button disabled={isSunday} onClick={handleClick}>
       <article
         className={
           addStyle +
-          " bg-white text-center hover:border-2 hover:shadow-lg hover:border-primary rounded-lg px-4 pt-4 pb-6 cursor-pointer border-2"
+          "  text-center  rounded-lg px-4 pt-4 pb-6 cursor-pointer border-2"
         }
       >
         <p className="font-medium">{dayName}</p>

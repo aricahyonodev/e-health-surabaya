@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { DetailRow } from "../register-form-step-1/page";
 
 export default function Page() {
@@ -23,9 +24,15 @@ export default function Page() {
           Perhatian : pastikan kembali setiap data, sebelum menekan tombol
           lanjut
         </p>
-        <button className="bg-primary px-2 py-1 text-lg w-full rounded-md text-white font-semibold">
-          Daftar
-        </button>
+        <Link
+          href={
+            "/health-center/12/policlinic/4/queue-ticket"
+          }
+        >
+          <button className="cursor-pointer bg-primary px-2 py-1 text-lg w-full rounded-md text-white font-semibold">
+            Daftar
+          </button>
+        </Link>
       </article>
     </>
   );
