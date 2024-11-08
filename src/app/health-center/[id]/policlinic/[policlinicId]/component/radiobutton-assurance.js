@@ -26,12 +26,10 @@ function RadioButton({id, name, value, title, assurance, onClick}) {
 
 export function RadioButtonAssurance({datas}) {
   const [assurance, setAssurance] = useState("BPJS Kesehatan");
- 
 
   return (
     <>
       {datas.map((data) => <RadioButton key={data.id} {...data} assurance={assurance} onClick={setAssurance}/>)}
-
     </>
   );
 }

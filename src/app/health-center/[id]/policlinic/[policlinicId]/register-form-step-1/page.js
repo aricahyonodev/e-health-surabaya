@@ -1,6 +1,7 @@
-import { RadioButtonAssurance } from "./components/radiobutton-assurance";
+import Link from "next/link";
+import { RadioButtonAssurance } from "../component/radiobutton-assurance";
 
-function DetailRow({ title, detail }) {
+export function DetailRow({ title, detail }) {
   return (
     <div className="flex flex-col mb-3">
       <p className="font-semibold">{title} </p>
@@ -9,7 +10,7 @@ function DetailRow({ title, detail }) {
   );
 }
 
-function DetailRowWithChildren({ title, children }) {
+export function DetailRowWithChildren({ title, children }) {
   return (
     <div className="flex flex-col  mb-3">
       <p className="font-semibold">{title}</p>
@@ -42,7 +43,11 @@ function PopUp() {
         </h1>
         <p className="mt-3 mb-5 text-lg ">BPJS Kesehatan</p>
         <div className="flex flex-col space-y-2">
-          <button className="p-2 border-2 rounded-md bg-primary text-white font-medium">Ya</button>
+          <Link href={"/health-center/12/policlinic/4/register-form-step-2"} className="w-full inline-block">
+            <button className="w-full  p-2 border-2 rounded-md bg-primary text-white font-medium">
+              Ya
+            </button>
+          </Link>
           <button className="p-2 ">Tidak</button>
         </div>
       </article>
