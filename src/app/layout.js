@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
+        <header className="fixed top-0 left-0 right-0">
           <Link
             href={"/home"}
             className="px-2 py-2 bg-primary text-white flex items-center"
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
           </Link>
         </header>
 
-        <main className="mx-4 mt-8 min-h-screen">{children}</main>
+        <main className="mx-4 mt-20 min-h-screen">{children}</main>
 
         <footer className="text-center text-sm mb-5 mt-12">
           2024 @ Dinas Kesehatan Koita Surabaya
