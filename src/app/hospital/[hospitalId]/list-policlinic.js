@@ -28,7 +28,10 @@ function PopUp({ id: policlinicId, title, img, onRemove }) {
         <p className="font-medium  mb-4 capitalize">{title}</p>
       </main>
       <footer className="flex flex-col items-center justify-center w-full">
-        <Link href={path +'/policlinic/' + policlinicId} className="w-full">
+        <Link
+          href={path + "/policlinic/" + policlinicId + "/select-arrival-date"}
+          className="w-full"
+        >
           <button className="py-1 w-full bg-primary rounded-md mb-3 text-white font-medium">
             Lanjut
           </button>
